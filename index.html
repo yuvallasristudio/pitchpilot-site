@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PitchPilot — Vocal Range Analyzer for Singers</title>
   <meta name="description" content="PitchPilot is a Chrome extension that analyzes your vocal range and automatically suggests the best key for any song. Built for singers." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PitchPilot — Sing every song in your key" />
+  <meta property="og:description" content="Free chord transposition for singers. Unlock Pro to detect your vocal key and range from a single recording." />
+  <meta property="og:image" content="https://yuvallasristudio.github.io/pitchpilot-site/assets/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -51,6 +57,7 @@
     }
 
     .logo span { color: var(--accent); }
+    .logo img { width: 32px; height: 32px; border-radius: 8px; }
 
     .nav-cta {
       background: var(--accent);
@@ -407,6 +414,79 @@
       vertical-align: middle;
     }
 
+    /* ── Media ── */
+    .hero-shot {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+    }
+
+    .browser-frame {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(33, 150, 243, 0.08);
+    }
+
+    .browser-bar {
+      display: flex;
+      gap: 6px;
+      padding: 0.6rem 0.9rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .browser-bar span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+
+    .browser-frame img,
+    .browser-frame video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .video-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .media-caption {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .themes {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .themes figure { text-align: center; }
+
+    .themes img {
+      display: block;
+      width: 280px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .themes figcaption {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
     /* ── Footer ── */
     footer {
       text-align: center;
@@ -424,7 +504,7 @@
 
   <!-- Nav -->
   <nav>
-    <div class="logo">🎵 Pitch<span>Pilot</span></div>
+    <div class="logo"><img src="assets/logo.png" alt="" /> Pitch<span>Pilot</span></div>
     <a class="nav-cta" href="https://chromewebstore.google.com/detail/pitchpilot/mjclkechmmbnlagclaphacbkkccaaoao" target="_blank" rel="noopener">Install Free →</a>
   </nav>
 
@@ -441,6 +521,26 @@
         🎤 Unlock Pro — $9.99
       </a>
     </div>
+  </section>
+
+  <!-- Screenshot -->
+  <div class="hero-shot">
+    <div class="browser-frame">
+      <div class="browser-bar"><span></span><span></span><span></span></div>
+      <img src="assets/screenshot-modern-dark.webp" width="1600" height="920"
+           alt="PitchPilot popup open next to a chord sheet, showing the detected page key G and pitch shift controls" />
+    </div>
+  </div>
+
+  <!-- Demo video -->
+  <section class="section">
+    <div class="section-label">See it in action</div>
+    <h2>From "too high" to your key in seconds</h2>
+    <div class="video-wrap browser-frame">
+      <video src="assets/demo.mp4" poster="assets/demo-poster.jpg" width="1280" height="720"
+             autoplay muted loop playsinline controls preload="metadata"></video>
+    </div>
+    <p class="media-caption">🔊 Tap the video to turn on sound</p>
   </section>
 
   <!-- How it works -->
@@ -502,6 +602,25 @@
         <p>Ultimate Guitar, Chordify, Songsterr, Musescore, and more.</p>
       </div>
     </div>
+  </section>
+
+  <!-- Themes -->
+  <section class="section" style="padding-top: 0;">
+    <div class="section-label">Make it yours</div>
+    <h2>Four themes, light or dark</h2>
+    <div class="themes">
+      <figure>
+        <img src="assets/popup-modern-dark.webp" width="632" height="1088" loading="lazy"
+             alt="PitchPilot popup in the Modern Dark theme" />
+        <figcaption>Modern Dark</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/popup-modern-light.webp" width="642" height="1088" loading="lazy"
+             alt="PitchPilot popup in the Modern Light theme" />
+        <figcaption>Modern Light</figcaption>
+      </figure>
+    </div>
+    <p class="media-caption">Plus Classic Light and Classic Dark</p>
   </section>
 
   <!-- Pricing -->

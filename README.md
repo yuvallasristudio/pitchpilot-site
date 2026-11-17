@@ -23,3 +23,9 @@ https://chromewebstore.google.com/detail/pitchpilot/mjclkechmmbnlagclaphacbkkcca
 
 If the LemonSqueezy checkout URL changes, update the two
 occurrences (hero + pricing).
+
+## Media
+
+Images and the demo video live in `assets/` (web-optimized). Raw source
+files go in `media/`, which is git-ignored — re-export from there with
+`cwebp` / `ffmpeg` when screenshots change.
