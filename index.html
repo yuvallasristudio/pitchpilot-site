@@ -11,6 +11,12 @@
   <meta property="og:description" content="Free chord transposition for singers. Unlock Pro to detect your vocal key and range from a single recording." />
   <meta property="og:image" content="https://yuvallasristudio.github.io/pitchpilot-site/assets/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <!-- BLACK FRIDAY: promo is hidden automatically after the end date (Dec 1, 00:00 PT) -->
+  <script>
+    if (Date.now() < Date.parse('2026-12-01T08:00:00Z')) document.documentElement.classList.add('bf');
+  </script>
+  <link rel="stylesheet" href="assets/bf/black-friday.css" />
+  <!-- /BLACK FRIDAY -->
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -554,6 +560,13 @@
 </head>
 <body>
 
+  <!-- BLACK FRIDAY -->
+  <div class="bf-bar bf-only">
+    🖤 <b>BLACK FRIDAY</b> · 20% off Pro with code <button class="bf-code" type="button" data-copy="BF20">BF20</button> · ends Nov 30
+    <a href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0&amp;checkout%5Bdiscount_code%5D=BF20">Claim →</a>
+  </div>
+  <!-- /BLACK FRIDAY -->
+
   <!-- Nav -->
   <nav>
     <div class="logo"><img src="assets/logo.png" alt="" /> Pitch<span>Pilot</span></div>
@@ -562,18 +575,49 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="badge">Free Chrome Extension · Pro Voice Analysis $19.00</div>
+    <div class="badge bf-off">Free Chrome Extension · Pro Voice Analysis $19.00</div>
+    <!-- BLACK FRIDAY -->
+    <div class="badge bf-only">Free Chrome Extension · Black Friday: Pro $15.20 (20% off)</div>
+    <!-- /BLACK FRIDAY -->
     <h1>Sing every song in <span>your key</span></h1>
     <p>Transpose chord sheets on any supported site for free. Unlock voice analysis to find your perfect key from a single recording.</p>
     <div class="hero-btns">
       <a class="btn-primary" href="https://chromewebstore.google.com/detail/pitchpilot/mjclkechmmbnlagclaphacbkkccaaoao" target="_blank" rel="noopener">
         ⬇️ Install Free on Chrome
       </a>
-      <a class="btn-secondary" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0">
+      <a class="btn-secondary bf-off" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0">
         🎤 Unlock Pro — $19.00
       </a>
+      <!-- BLACK FRIDAY -->
+      <a class="btn-secondary bf-only" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0&amp;checkout%5Bdiscount_code%5D=BF20">
+        🎤 Unlock Pro — <s>$19</s> $15.20
+      </a>
+      <!-- /BLACK FRIDAY -->
     </div>
   </section>
+
+  <!-- BLACK FRIDAY -->
+  <div class="bf-section bf-only">
+    <section class="section split">
+      <div class="phone">
+        <video src="assets/bf/bf-reel.mp4" poster="assets/bf/bf-poster.webp" width="720" height="1280"
+               playsinline controls preload="none"></video>
+      </div>
+      <div class="split-copy">
+        <div class="section-label">Black Friday · 20% off</div>
+        <h2>Find your key. <span>Pay less.</span></h2>
+        <div class="bf-price"><s>$19</s><strong>$15.20</strong></div>
+        <p>PitchPilot Pro · one-time payment · lifetime license. Ends November 30.</p>
+        <div class="bf-code-row">
+          <button class="bf-code" type="button" data-copy="BF20">BF20</button> applied automatically at checkout
+        </div>
+        <a class="btn-primary btn-bf" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0&amp;checkout%5Bdiscount_code%5D=BF20">
+          Claim 20% off →
+        </a>
+      </div>
+    </section>
+  </div>
+  <!-- /BLACK FRIDAY -->
 
   <!-- Screenshot -->
   <div class="hero-shot">
@@ -732,8 +776,14 @@
 
         <div class="tier-card pro">
           <div class="tier-name">Pro</div>
-          <div class="tier-price">$19.00</div>
+          <div class="tier-price bf-off">$19.00</div>
+          <!-- BLACK FRIDAY -->
+          <div class="tier-price bf-only"><s>$19</s>$15.20</div>
+          <!-- /BLACK FRIDAY -->
           <div class="tier-price-note">One-time purchase · Lifetime license</div>
+          <!-- BLACK FRIDAY -->
+          <div class="bf-only"><span class="bf-tag">BLACK FRIDAY · CODE BF20</span></div>
+          <!-- /BLACK FRIDAY -->
           <ul>
             <li><b>Everything in Free, plus:</b></li>
             <li>🎤 Voice recording &amp; live pitch visualizer</li>
@@ -742,9 +792,14 @@
             <li>⭐ Voice-only mode — instant key recommendation</li>
             <li>Priority email support</li>
           </ul>
-          <a class="tier-cta" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0">
+          <a class="tier-cta bf-off" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0">
             Unlock Pro →
           </a>
+          <!-- BLACK FRIDAY -->
+          <a class="tier-cta bf-only" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0&amp;checkout%5Bdiscount_code%5D=BF20">
+            Claim 20% off →
+          </a>
+          <!-- /BLACK FRIDAY -->
         </div>
 
       </div>
@@ -755,6 +810,19 @@
   <footer>
     <p>© 2026 PitchPilot · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="refund.html">Refund Policy</a></p>
   </footer>
+
+  <!-- BLACK FRIDAY -->
+  <script>
+    document.querySelectorAll('.bf-code').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        navigator.clipboard.writeText(btn.dataset.copy).then(function () {
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = btn.dataset.copy; }, 1500);
+        });
+      });
+    });
+  </script>
+  <!-- /BLACK FRIDAY -->
 
 </body>
 </html>

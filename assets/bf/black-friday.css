@@ -1,0 +1,92 @@
+/* Black Friday 2026 — remove this file (and the BLACK FRIDAY blocks in index.html) after the sale. */
+
+:root {
+  --bf-yellow: #FFD43B;
+  --bf-purple: #a78bfa;
+}
+
+/* <html class="bf"> is set by the expiry script in index.html */
+html:not(.bf) .bf-only { display: none !important; }
+html.bf .bf-off { display: none !important; }
+
+.bf-bar {
+  background: #000;
+  color: var(--text);
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.bf-bar b { color: var(--bf-yellow); letter-spacing: 0.05em; }
+.bf-bar a { color: var(--bf-yellow); font-weight: 700; margin-left: 0.4rem; }
+
+.bf-code {
+  font: 700 0.95em ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--bf-yellow);
+  background: transparent;
+  border: 1px dashed var(--bf-yellow);
+  border-radius: 6px;
+  padding: 0.1rem 0.5rem;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+}
+
+.bf-code:hover { background: rgba(255, 212, 59, 0.1); }
+
+.bf-section {
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(124, 58, 237, 0.35), transparent 60%),
+    radial-gradient(ellipse at 90% 90%, rgba(14, 116, 144, 0.3), transparent 55%),
+    #07080d;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.bf-section .section-label { color: var(--bf-yellow); }
+
+.bf-section h2 span {
+  background: linear-gradient(90deg, var(--bf-purple), #38bdf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bf-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.bf-price s { color: var(--muted); font-size: 1.6rem; font-weight: 700; text-decoration-color: #f43f5e; }
+.bf-price strong { font-size: 3.4rem; font-weight: 800; line-height: 1; }
+
+.bf-code-row { margin: 1.2rem 0 1.8rem; color: var(--muted); font-size: 0.9rem; }
+.bf-code-row .bf-code { font-size: 1.15rem; padding: 0.35rem 0.9rem; margin-right: 0.6rem; }
+
+.btn-bf {
+  background: var(--bf-yellow);
+  color: #111;
+  box-shadow: 0 8px 24px rgba(255, 212, 59, 0.25);
+}
+
+.btn-bf:hover { background: #ffe066; }
+
+.tier-price s { color: var(--muted); font-size: 1.2rem; margin-right: 0.4rem; text-decoration-color: #f43f5e; }
+
+.tier-card.pro .bf-tag {
+  display: inline-block;
+  background: var(--bf-yellow);
+  color: #111;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 720px) {
+  .bf-price { justify-content: center; }
+}
