@@ -11,6 +11,12 @@
   <meta property="og:description" content="Free chord transposition for singers. Unlock Pro to detect your vocal key and range from a single recording." />
   <meta property="og:image" content="https://yuvallasristudio.github.io/pitchpilot-site/assets/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <!-- BLACK FRIDAY: promo is hidden automatically after the end date (Dec 1, 00:00 PT) -->
+  <script>
+    if (Date.now() < Date.parse('2026-12-01T08:00:00Z')) document.documentElement.classList.add('bf');
+  </script>
+  <link rel="stylesheet" href="assets/bf/black-friday.css" />
+  <!-- /BLACK FRIDAY -->
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -487,6 +493,58 @@
       color: var(--muted);
     }
 
+    /* ── Reel + spotlight ── */
+    .split {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .split h2 { text-align: left; margin-bottom: 1rem; }
+    .split .section-label { text-align: left; }
+    .split-copy p { color: var(--muted); margin-bottom: 1.8rem; }
+
+    .phone {
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 0 6px var(--card);
+    }
+
+    .phone video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9 / 16;
+    }
+
+    .spotlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .spotlight a {
+      display: block;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .spotlight a:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .spotlight img { display: block; width: 100%; height: auto; }
+
+    @media (max-width: 720px) {
+      .split { grid-template-columns: 1fr; gap: 2rem; }
+      .split .phone { max-width: 280px; margin: 0 auto; }
+      .split h2, .split .section-label, .split-copy { text-align: center; }
+    }
+
     /* ── Footer ── */
     footer {
       text-align: center;
@@ -502,6 +560,13 @@
 </head>
 <body>
 
+  <!-- BLACK FRIDAY -->
+  <div class="bf-bar bf-only">
+    🖤 <b>BLACK FRIDAY</b> · 20% off Pro with code <button class="bf-code" type="button" data-copy="BF20">BF20</button> · ends Nov 30
+    <a href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0&amp;checkout%5Bdiscount_code%5D=BF20">Claim →</a>
+  </div>
+  <!-- /BLACK FRIDAY -->
+
   <!-- Nav -->
   <nav>
     <div class="logo"><img src="assets/logo.png" alt="" /> Pitch<span>Pilot</span></div>
@@ -510,18 +575,49 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="badge">Free Chrome Extension · Pro Voice Analysis $19.00</div>
+    <div class="badge bf-off">Free Chrome Extension · Pro Voice Analysis $19.00</div>
+    <!-- BLACK FRIDAY -->
+    <div class="badge bf-only">Free Chrome Extension · Black Friday: Pro $15.20 (20% off)</div>
+    <!-- /BLACK FRIDAY -->
     <h1>Sing every song in <span>your key</span></h1>
     <p>Transpose chord sheets on any supported site for free. Unlock voice analysis to find your perfect key from a single recording.</p>
     <div class="hero-btns">
       <a class="btn-primary" href="https://chromewebstore.google.com/detail/pitchpilot/mjclkechmmbnlagclaphacbkkccaaoao" target="_blank" rel="noopener">
         ⬇️ Install Free on Chrome
       </a>
-      <a class="btn-secondary" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0">
+      <a class="btn-secondary bf-off" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0">
         🎤 Unlock Pro — $19.00
       </a>
+      <!-- BLACK FRIDAY -->
+      <a class="btn-secondary bf-only" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0&amp;checkout%5Bdiscount_code%5D=BF20">
+        🎤 Unlock Pro — <s>$19</s> $15.20
+      </a>
+      <!-- /BLACK FRIDAY -->
     </div>
   </section>
+
+  <!-- BLACK FRIDAY -->
+  <div class="bf-section bf-only">
+    <section class="section split">
+      <div class="phone">
+        <video src="assets/bf/bf-reel.mp4" poster="assets/bf/bf-poster.webp" width="720" height="1280"
+               playsinline controls preload="none"></video>
+      </div>
+      <div class="split-copy">
+        <div class="section-label">Black Friday · 20% off</div>
+        <h2>Find your key. <span>Pay less.</span></h2>
+        <div class="bf-price"><s>$19</s><strong>$15.20</strong></div>
+        <p>PitchPilot Pro · one-time payment · lifetime license. Ends November 30.</p>
+        <div class="bf-code-row">
+          <button class="bf-code" type="button" data-copy="BF20">BF20</button> applied automatically at checkout
+        </div>
+        <a class="btn-primary btn-bf" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0&amp;checkout%5Bdiscount_code%5D=BF20">
+          Claim 20% off →
+        </a>
+      </div>
+    </section>
+  </div>
+  <!-- /BLACK FRIDAY -->
 
   <!-- Screenshot -->
   <div class="hero-shot">
@@ -532,15 +628,30 @@
     </div>
   </div>
 
+  <!-- Hook reel -->
+  <section class="section split">
+    <div class="phone">
+      <video src="assets/reel-wrong-key.mp4" poster="assets/reel-wrong-key-poster.jpg" width="720" height="1280"
+             playsinline controls preload="none"></video>
+    </div>
+    <div class="split-copy">
+      <div class="section-label">Sound familiar?</div>
+      <h2>The song isn't too high. It's in the wrong key.</h2>
+      <p>Sing a few notes and PitchPilot hears your vocal key, then moves every chord on the page to fit your voice. No music theory, no capo math.</p>
+      <a class="btn-primary" href="https://chromewebstore.google.com/detail/pitchpilot/mjclkechmmbnlagclaphacbkkccaaoao" target="_blank" rel="noopener">
+        ⬇️ Install Free on Chrome
+      </a>
+    </div>
+  </section>
+
   <!-- Demo video -->
   <section class="section">
     <div class="section-label">See it in action</div>
     <h2>From "too high" to your key in seconds</h2>
     <div class="video-wrap browser-frame">
       <video src="assets/demo.mp4" poster="assets/demo-poster.jpg" width="1280" height="720"
-             autoplay muted loop playsinline controls preload="metadata"></video>
+             playsinline controls preload="metadata"></video>
     </div>
-    <p class="media-caption">🔊 Tap the video to turn on sound</p>
   </section>
 
   <!-- How it works -->
@@ -604,6 +715,22 @@
     </div>
   </section>
 
+  <!-- Free vs Pro spotlight -->
+  <section class="section" style="padding-top: 0;">
+    <div class="section-label">Free &amp; Pro</div>
+    <h2>Start free. Go Pro when you're ready.</h2>
+    <div class="spotlight">
+      <a href="https://chromewebstore.google.com/detail/pitchpilot/mjclkechmmbnlagclaphacbkkccaaoao" target="_blank" rel="noopener">
+        <img src="assets/card-free.webp" width="720" height="720" loading="lazy"
+             alt="Free: transpose any chord sheet in one click, with semitone pitch shift, on 13+ sites including Ultimate Guitar, Chordify and Songsterr" />
+      </a>
+      <a href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0">
+        <img src="assets/card-pro.webp" width="720" height="900" loading="lazy"
+             alt="Pro: sing for a few seconds to get your vocal key, full range and tessitura, and the exact transposition for the song on screen" />
+      </a>
+    </div>
+  </section>
+
   <!-- Themes -->
   <section class="section" style="padding-top: 0;">
     <div class="section-label">Make it yours</div>
@@ -649,8 +776,14 @@
 
         <div class="tier-card pro">
           <div class="tier-name">Pro</div>
-          <div class="tier-price">$19.00</div>
+          <div class="tier-price bf-off">$19.00</div>
+          <!-- BLACK FRIDAY -->
+          <div class="tier-price bf-only"><s>$19</s>$15.20</div>
+          <!-- /BLACK FRIDAY -->
           <div class="tier-price-note">One-time purchase · Lifetime license</div>
+          <!-- BLACK FRIDAY -->
+          <div class="bf-only"><span class="bf-tag">BLACK FRIDAY · CODE BF20</span></div>
+          <!-- /BLACK FRIDAY -->
           <ul>
             <li><b>Everything in Free, plus:</b></li>
             <li>🎤 Voice recording &amp; live pitch visualizer</li>
@@ -659,9 +792,14 @@
             <li>⭐ Voice-only mode — instant key recommendation</li>
             <li>Priority email support</li>
           </ul>
-          <a class="tier-cta" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0">
+          <a class="tier-cta bf-off" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0">
             Unlock Pro →
           </a>
+          <!-- BLACK FRIDAY -->
+          <a class="tier-cta bf-only" href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0&amp;checkout%5Bdiscount_code%5D=BF20">
+            Claim 20% off →
+          </a>
+          <!-- /BLACK FRIDAY -->
         </div>
 
       </div>
@@ -672,6 +810,19 @@
   <footer>
     <p>© 2026 PitchPilot · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="refund.html">Refund Policy</a></p>
   </footer>
+
+  <!-- BLACK FRIDAY -->
+  <script>
+    document.querySelectorAll('.bf-code').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        navigator.clipboard.writeText(btn.dataset.copy).then(function () {
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = btn.dataset.copy; }, 1500);
+        });
+      });
+    });
+  </script>
+  <!-- /BLACK FRIDAY -->
 
 </body>
 </html>

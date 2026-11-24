@@ -29,3 +29,18 @@ occurrences (hero + pricing).
 Images and the demo video live in `assets/` (web-optimized). Raw source
 files go in `media/`, which is git-ignored — re-export from there with
 `cwebp` / `ffmpeg` when screenshots change.
+
+## Black Friday 2026 (temporary — revert after the sale)
+
+Sale: 20% off Pro with LemonSqueezy discount code `BF20` ($19 → $15.20).
+
+- **Auto-expiry:** the promo hides itself on Dec 1, 2026 00:00 PT
+  (`Date.parse(...)` in the `<head>` of `index.html`) and the page falls back
+  to regular pricing. Change that date to extend or end the sale early.
+- **What's temporary:** everything between `<!-- BLACK FRIDAY -->` and
+  `<!-- /BLACK FRIDAY -->` in `index.html`, the `bf-off` classes on the
+  regular-price elements, and the whole `assets/bf/` folder.
+- **Clean revert:** the promo is a single commit — "Add Black Friday 2026
+  promo" — so `git revert <that commit>` removes it (the git tag
+  `black-friday-2026` points at it). The reel and Free/Pro cards added
+  alongside it are permanent and stay.
