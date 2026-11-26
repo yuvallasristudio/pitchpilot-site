@@ -44,3 +44,12 @@ Sale: 20% off Pro with LemonSqueezy discount code `BF20` ($19 → $15.20).
   promo" — so `git revert <that commit>` removes it (the git tag
   `black-friday-2026` points at it). The reel and Free/Pro cards added
   alongside it are permanent and stay.
+
+## Backlog
+
+- [ ] **Google Search Console** (optional, skipped for now). Add a URL-prefix
+  property for `https://yuvallasristudio.github.io/pitchpilot-site/`, verify
+  with the HTML file method (put Google's `google….html` file in the repo
+  root, not `assets/`, and keep it there), submit `sitemap.xml`, then use URL
+  Inspection > Request indexing on the homepage. Search data only starts from
+  the day the property is added.
