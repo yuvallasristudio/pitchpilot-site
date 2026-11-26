@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yuvallasristudio.github.io/pitchpilot-site/sitemap.xml

@@ -3,14 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PitchPilot — Vocal Range Analyzer for Singers</title>
-  <meta name="description" content="PitchPilot is a Chrome extension that analyzes your vocal range and automatically suggests the best key for any song. Built for singers." />
+  <title>PitchPilot – Chord Transposer &amp; Vocal Key Finder for Singers (Chrome Extension)</title>
+  <meta name="description" content="Free Chrome extension that transposes chords on Ultimate Guitar, Chordify and 11 other chord sites in one click. Pro finds your vocal key and range from a few seconds of singing." />
+  <link rel="canonical" href="https://yuvallasristudio.github.io/pitchpilot-site/" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PitchPilot — Sing every song in your key" />
-  <meta property="og:description" content="Free chord transposition for singers. Unlock Pro to detect your vocal key and range from a single recording." />
+  <meta property="og:url" content="https://yuvallasristudio.github.io/pitchpilot-site/" />
+  <meta property="og:title" content="PitchPilot – Sing every song in your key" />
+  <meta property="og:description" content="Free Chrome extension that transposes chords on Ultimate Guitar, Chordify and 11 other chord sites in one click. Pro finds your vocal key and range from a few seconds of singing." />
   <meta property="og:image" content="https://yuvallasristudio.github.io/pitchpilot-site/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PitchPilot – Sing every song in your key" />
+  <meta name="twitter:description" content="Free Chrome extension that transposes chords on Ultimate Guitar, Chordify and 11 other chord sites in one click. Pro finds your vocal key and range from a few seconds of singing." />
+  <meta name="twitter:image" content="https://yuvallasristudio.github.io/pitchpilot-site/assets/og-image.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "PitchPilot",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Google Chrome",
+        "description": "Free Chrome extension that transposes chords on Ultimate Guitar, Chordify and 11 other chord sites in one click. Pro finds your vocal key and range from a few seconds of singing.",
+        "url": "https://yuvallasristudio.github.io/pitchpilot-site/",
+        "downloadUrl": "https://chromewebstore.google.com/detail/pitchpilot/mjclkechmmbnlagclaphacbkkccaaoao",
+        "image": "https://yuvallasristudio.github.io/pitchpilot-site/assets/og-image.jpg",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Free",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Pro, one-time lifetime license",
+            "price": "19",
+            "priceCurrency": "USD"
+          }
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "name": "YL Studio"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I find the right key to sing a song in?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Compare the song's highest and lowest melody notes with the range you can sing comfortably, then move the song up or down by the difference. PitchPilot Pro does this for you: sing for a few seconds, and it detects your vocal key and range and tells you exactly how many semitones to transpose the song on screen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a Chrome extension that transposes chords automatically?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PitchPilot detects the key of the song on supported chord sites and transposes every chord in one click, without changing the lyrics. Transposing is free."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which chord sites does PitchPilot work on?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ultimate Guitar, Chordify, Songsterr, MuseScore, Cifra Club, E-Chords, Chordie, Tabs4Acoustic, Genius, Tab4U, Negina, Nagnu and Shironet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I transpose a song down if a capo only goes up?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PitchPilot rewrites the chords themselves, so you can move a song down or up by any number of semitones."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does PitchPilot record or upload my voice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Audio is processed on your device and never uploaded. No account is needed."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
   <!-- BLACK FRIDAY: promo is hidden automatically after the end date (Dec 1, 00:00 PT) -->
   <script>
     if (Date.now() < Date.parse('2026-12-01T08:00:00Z')) document.documentElement.classList.add('bf');
@@ -76,6 +163,10 @@
     }
 
     .nav-cta:hover { background: var(--accent-hover); }
+
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-link { color: var(--muted); font-weight: 600; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-link:hover { color: var(--text); }
 
     /* ── Hero ── */
     .hero {
@@ -545,6 +636,38 @@
       .split h2, .split .section-label, .split-copy { text-align: center; }
     }
 
+    /* ── FAQ ── */
+    #faq { scroll-margin-top: 4.5rem; }
+
+    .faq { max-width: 720px; margin: 0 auto; display: grid; gap: 0.75rem; }
+
+    .faq details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: border-color 0.2s;
+    }
+
+    .faq details[open], .faq details:hover { border-color: rgba(33,150,243,0.5); }
+
+    .faq summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1.4rem;
+      font-weight: 700;
+    }
+
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--accent); font-size: 1.4rem; font-weight: 400; line-height: 1; }
+    .faq details[open] summary::after { content: "−"; }
+    .faq summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 12px; }
+
+    .faq details p { padding: 0 1.4rem 1.2rem; font-size: 0.92rem; color: var(--muted); }
+
     /* ── Footer ── */
     footer {
       text-align: center;
@@ -570,7 +693,10 @@
   <!-- Nav -->
   <nav>
     <div class="logo"><img src="assets/logo.png" alt="" /> Pitch<span>Pilot</span></div>
-    <a class="nav-cta" href="https://chromewebstore.google.com/detail/pitchpilot/mjclkechmmbnlagclaphacbkkccaaoao" target="_blank" rel="noopener">Install Free →</a>
+    <div class="nav-links">
+      <a class="nav-link" href="#faq">FAQ</a>
+      <a class="nav-cta" href="https://chromewebstore.google.com/detail/pitchpilot/mjclkechmmbnlagclaphacbkkccaaoao" target="_blank" rel="noopener">Install Free →</a>
+    </div>
   </nav>
 
   <!-- Hero -->
@@ -709,7 +835,7 @@
       </div>
       <div class="feature-card">
         <div class="feature-icon">🌐</div>
-        <h3>Works on 13+ Sites</h3>
+        <h3>Works on 13 Sites</h3>
         <p>Ultimate Guitar, Chordify, Songsterr, Musescore, and more.</p>
       </div>
     </div>
@@ -722,7 +848,7 @@
     <div class="spotlight">
       <a href="https://chromewebstore.google.com/detail/pitchpilot/mjclkechmmbnlagclaphacbkkccaaoao" target="_blank" rel="noopener">
         <img src="assets/card-free.webp" width="720" height="720" loading="lazy"
-             alt="Free: transpose any chord sheet in one click, with semitone pitch shift, on 13+ sites including Ultimate Guitar, Chordify and Songsterr" />
+             alt="Free: transpose any chord sheet in one click, with semitone pitch shift, on 13 sites including Ultimate Guitar, Chordify and Songsterr" />
       </a>
       <a href="https://ylstudio.lemonsqueezy.com/checkout/buy/7671ad48-662f-428f-888b-9288be978c62?media=0">
         <img src="assets/card-pro.webp" width="720" height="900" loading="lazy"
@@ -767,7 +893,7 @@
             <li>One-click chord transposition</li>
             <li>Manual +/- semitone pitch shift</li>
             <li>All 4 themes</li>
-            <li>Works on 13+ chord sites</li>
+            <li>Works on 13 chord sites</li>
           </ul>
           <a class="tier-cta" href="https://chromewebstore.google.com/detail/pitchpilot/mjclkechmmbnlagclaphacbkkccaaoao" target="_blank" rel="noopener">
             Install Free
@@ -805,6 +931,34 @@
       </div>
     </section>
   </div>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="section-label">FAQ</div>
+    <h2>Questions singers ask</h2>
+    <div class="faq">
+      <details>
+        <summary>How do I find the right key to sing a song in?</summary>
+        <p>Compare the song's highest and lowest melody notes with the range you can sing comfortably, then move the song up or down by the difference. PitchPilot Pro does this for you: sing for a few seconds, and it detects your vocal key and range and tells you exactly how many semitones to transpose the song on screen.</p>
+      </details>
+      <details>
+        <summary>Is there a Chrome extension that transposes chords automatically?</summary>
+        <p>Yes. PitchPilot detects the key of the song on supported chord sites and transposes every chord in one click, without changing the lyrics. Transposing is free.</p>
+      </details>
+      <details>
+        <summary>Which chord sites does PitchPilot work on?</summary>
+        <p>Ultimate Guitar, Chordify, Songsterr, MuseScore, Cifra Club, E-Chords, Chordie, Tabs4Acoustic, Genius, Tab4U, Negina, Nagnu and Shironet.</p>
+      </details>
+      <details>
+        <summary>Can I transpose a song down if a capo only goes up?</summary>
+        <p>Yes. PitchPilot rewrites the chords themselves, so you can move a song down or up by any number of semitones.</p>
+      </details>
+      <details>
+        <summary>Does PitchPilot record or upload my voice?</summary>
+        <p>No. Audio is processed on your device and never uploaded. No account is needed.</p>
+      </details>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
